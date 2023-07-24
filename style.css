@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #45f3ff;
+}
+::placeholder {
+  color: rgba(0, 255, 255, 0.529);
+}
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000026;
+  overflow: hidden;
+}
+
+.box {
+  border-radius: 52px;
+  height: 35vw;
+  width: 30vw;
+  background-color: #000026;
+  position: relative;
+  overflow: hidden;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 30vw;
+  height: 35vw;
+  background: linear-gradient(
+    0deg,
+    transparent,
+    transparent,
+    #45f3ff,
+    #45f3ff,
+    #45f3f3
+  );
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: border 6s linear infinite;
+}
+.box::after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  right: -50%;
+  width: 30vw;
+  height: 35vw;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    transparent,
+    crimson,
+    crimson,
+    crimson
+  );
+  z-index: 1;
+  transform-origin: top left;
+  animation: border 6s linear infinite;
+}
+
+form {
+  inset: 4px;
+  background-color: #000026;
+  border-radius: 52px;
+  padding: 3vw;
+  text-align: center;
+  position: absolute;
+  z-index: 2;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 1vw;
+  margin-bottom: 4vw;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+}
+
+input {
+  width: 94%;
+  margin-bottom: 3vw;
+  padding: 5px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid aqua;
+  background: transparent;
+  letter-spacing: 0.1rem;
+}
+button {
+  width: 94%;
+  padding: 10px;
+  border-radius: 3vw;
+  margin-top: 3vw;
+  font-size: 1.2rem;
+  background: transparent;
+  border: 1px solid aqua;
+  outline: none;
+  letter-spacing: 0.2rem;
+}
+
+.options {
+  margin-top: 3vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+@keyframes border {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 1285px) {
+  .box {
+    height: 45vw;
+  }
+  .input-div {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .box {
+    height: 50vw;
+    width: 40vw;
+  }
+  button {
+    padding: 3px;
+    font-size: medium;
+  }
+
+  form {
+    padding: 5vw;
+  }
+  h2 {
+    font-size: medium;
+  }
+  .options p {
+    font-size: smaller;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  button {
+    font-size: small;
+    letter-spacing: 0;
+  }
+  .options p {
+    font-size: xx-small;
+  }
+  .box {
+    height: 60vw;
+    width: 45vw;
+  }
+  .box::before {
+    top: -20%;
+    height: 60vw;
+    width: 45vw;
+  }
+  .box::after {
+    bottom: -20%;
+    height:60vw;
+    width: 45vw;
+  }
+  input{
+    font-size: xx-small;
+  }
+}
+
+@media screen and (max-width:310px) {
+    .options p{
+        font-size: xx-small;
+    }
+    button{
+        padding: 2px;
+        margin-top: 2vw;
+  font-size: 0.6rem;
+  letter-spacing: 0;
+    }
+    .box {
+        height: 73vw;
+        width: 60vw;
+      }
+      form{
+
+          /* padding: 1vw; */
+      }
+      .box::before {
+        top: -20%;
+        height: 73vw;
+        width: 60vw;
+      }
+      .box::after {
+        bottom: -20%;
+        height:73vw;
+        width: 60vw;
+      }
+}
